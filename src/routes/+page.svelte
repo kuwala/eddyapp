@@ -4,29 +4,29 @@
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Eddy Eddy Eddy's group page" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</span>
+<section class="xp-desktop">
+	<p> Eddy Eddy Eddy</p>
+	<p> Eddy Eddy Eddy</p>
+	<p> Eddy Eddy Eddy</p>
+	<p> <a href="archive/2019/index.html">Check out the archive</a></p>
+	<img class="xp-img" src="img/bliss-2006.jpeg" alt="location from windows xp bliss wallpaper in 2006.">
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
 </section>
 
 <style>
+	.xp-img {
+		width: 900px;
+		border-radius: 4px;
+	}
+	.xp-img:hover {
+		box-shadow: 0 0 8px 4px rgba(0, 140, 186, 0.5);
+	}
+	.xp-desktop {
+		background-image: url('img/blis-2006.jpeg');
+	}
 	section {
 		display: flex;
 		flex-direction: column;
@@ -39,19 +39,4 @@
 		width: 100%;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>

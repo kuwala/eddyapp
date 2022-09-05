@@ -1,8 +1,12 @@
 # eddyeddyeddy-app
 A svelte kit project for the eddy eddy eddy's group homepage.
 
+## Devlog
+Is stored in a DEVLOG.md
+
 ## Things to add
-- system 7. css
+- [x] system 7. css
+- OLD site as static pages (w/ fixed links)
 - cursor clock
 - make a new page. About new releases.
 - try inverting colors affect
