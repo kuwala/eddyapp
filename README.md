@@ -1,3 +1,18 @@
+# eddyeddyeddy-app
+A svelte kit project for the eddy eddy eddy's group homepage.
+
+## Things to add
+- system 7. css
+- cursor clock
+- make a new page. About new releases.
+- try inverting colors affect
+- new audio recordings
+- bandcamp link
+- make a shell script that downloads the project from github and runs the server.
+- make a version that can run in a container on a r pi 4
+
+
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
@@ -24,6 +39,7 @@ npm run dev
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
+
 
 ## Building
 
