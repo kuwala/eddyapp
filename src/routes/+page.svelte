@@ -25,7 +25,7 @@
 			<div class="centered-div">
 
 			{#if showWindow}
-				<MiniWindow onClose={() => showWindow = false} />
+				<MiniWindow onClose={() => showWindow = false} left={600} top={600}/>
 			{/if}
 			<h1>Uh hello</h1>
 			</div>
@@ -35,12 +35,10 @@
 		</div>
 
 	</div> <!-- end desktop-->
-	<br/><br/><br/>
-<br/>
+	  <div style="margin-top: 58px;">
 			<Dock on:click={()=> {showWindow = true}}/>
 
-
-	
+		</div>
 
 </section>
 

@@ -3,8 +3,8 @@
   import Draggable from './Draggable.svelte';
   export let onClose;
  
-	// export let left = 600;
-	// export let top = 600;
+	export let left = 600;
+	export let top = 600;
 	
 	// let moving = false;
 	
@@ -30,11 +30,11 @@
 <style>
 </style>
 <!-- <div on:mousedown={onMouseMove} class="window glass draggable" style="left: {left}px; top: {top}px;"> -->
-<Draggable>
+<Draggable {left} {top}>
 
 <div class="window glass " >
   <div style="max-width: 320px">
-    <div class="title-bar">
+    <div class="title-bar glass">
       <div class="title-bar-text">A glass window frame</div>
       <div class="title-bar-controls">
         <button aria-label="Minimize"></button>
@@ -43,6 +43,7 @@
     </div>
     <div class="window-body">
       <p>The background behind is blurred. Will it stretch to fit?</p>
+      <!-- <p>I guess a sound player is going to show up here eventually</p> -->
     </div>
   </div>
 </div>
