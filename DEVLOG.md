@@ -15,3 +15,6 @@ Once I do need it I have found this link and it seems that the community agrrees
 (npm link)[https://www.npmjs.com/package/rollup-plugin-css-only]
 
 Rollup is a module bundler for javascript. (more info here)[https://rollupjs.org/guide/en/]
+
+# credit 
+Need to credit Goldin+Senneby for bliss photo.
