@@ -1,4 +1,11 @@
-# Dev log for eddyapp
+# Dev log for eddyap 2
+
+Looks like I got to fix things up.
+Fix the windows 
+
+
+
+# Dev log for eddyapp 1
 
 Installing and configuring the web dev tools.
 
