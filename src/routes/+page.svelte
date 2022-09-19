@@ -10,14 +10,15 @@
 	let showAudioPlayer= true;
 	let showGallery = true;
 
-	function selectIcon(event:MouseEvent) {
-		let mouseX = event.clientX;
+	function selectIcon(event:CustomEvent) {
+		let mouseX = event.detail.xPos;
 		console.log(mouseX);
-		if (mouseX >= 350 && mouseX <= 385) {
+
+		if (mouseX >= 0 && mouseX <= 45) {
 		showAudioPlayer = true;
-		} else if (mouseX >= 385 && mouseX <= 420) {
+		} else if (mouseX >= 45 && mouseX <= 85) {
 			showGallery = true;
-		} else if (mouseX >= 420 && mouseX <= 460) {
+		} else if (mouseX >= 85 && mouseX <= 125) {
 			showGallery = false;
 		}
 
@@ -54,7 +55,7 @@
 
 	</div> <!-- end desktop-->
 	  <div style="margin-top: 58px;">
-			<Dock on:click={selectIcon}/>
+			<Dock on:clickEvent={selectIcon}/>
 
 		</div>
 

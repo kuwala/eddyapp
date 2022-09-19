@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let left = 600;
 	export let top = 700;
 	
@@ -8,7 +8,7 @@
 		moving = true;
 	}
 	
-	function onMouseMove(e) {
+	function onMouseMove(e:MouseEvent) {
 		if (moving) {
 			left += e.movementX;
 			top += e.movementY;
