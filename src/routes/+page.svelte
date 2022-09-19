@@ -2,10 +2,27 @@
 	import Draggable from '$lib/components/Draggable.svelte';
 	import MiniWindow from '$lib/components/MiniWindow.svelte';
 	import Dock from '$lib/components/Dock.svelte'
+	import AudioPlayerWindow from '$lib/components/AudioPlayerWindow.svelte';
 	import Counter from '$lib/Counter.svelte';
 	import '7.css/dist/7.css';
+    import GalleryWindow from '$lib/components/GalleryWindow.svelte';
 
-	let showWindow = true;
+	let showAudioPlayer= true;
+	let showGallery = true;
+
+	function selectIcon(event:MouseEvent) {
+		let mouseX = event.clientX;
+		console.log(mouseX);
+		if (mouseX >= 350 && mouseX <= 385) {
+		showAudioPlayer = true;
+		} else if (mouseX >= 385 && mouseX <= 420) {
+			showGallery = true;
+		} else if (mouseX >= 420 && mouseX <= 460) {
+			showGallery = false;
+		}
+
+	}
+
 	
 </script>
 
@@ -15,18 +32,19 @@
 </svelte:head>
 
 <section >
-	<p> Eddy Eddy Eddy</p>
-	<p> Eddy Eddy Eddy</p>
-	<p> Eddy Eddy Eddy</p>
+	<span class="slow-fadeout fade-in">
+		<p> Eddy Eddy Eddy</p>
+		<p> Eddy Eddy Eddy</p>
+		<p> Eddy Eddy Eddy</p>
+	</span>
 	<div class="xp-desktop">
 
 		<div class="centered-divd">
 			<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
 			<div class="centered-div">
 
-			{#if showWindow}
-				<MiniWindow onClose={() => showWindow = false} left={600} top={600}/>
-			{/if}
+			<AudioPlayerWindow bind:showWindow={showAudioPlayer} ></AudioPlayerWindow>
+			<GalleryWindow bind:showWindow={showGallery}></GalleryWindow>
 			<h1>Uh hello</h1>
 			</div>
 
@@ -36,7 +54,7 @@
 
 	</div> <!-- end desktop-->
 	  <div style="margin-top: 58px;">
-			<Dock on:click={()=> {showWindow = true}}/>
+			<Dock on:click={selectIcon}/>
 
 		</div>
 
@@ -75,13 +93,6 @@
 		box-shadow: 0 0 8px 4px rgba(0, 140, 186, 0.5);
 		transition: box-shadow 0.5s ease-in-out;
 	}
-	.center-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
 	section {
 		display: flex;
 		flex-direction: column;
@@ -89,6 +100,26 @@
 		align-items: center;
 		flex: 1;
 	}
+	.slow-fadeout{
+		animation-name: fadeOutAnim;
+		animation-duration: 6s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		/* lets the affected element keep its final animation value (stay invisble)*/
+	}
+
+
+
+	@keyframes fadeOutAnim {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+
 
 
 </style>

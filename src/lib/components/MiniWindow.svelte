@@ -2,8 +2,9 @@
   import '7.css/dist/7.css'
   import Draggable from './Draggable.svelte';
   export let onClose: ()=>{};
-  export let onMinimize: ()=>{};
-  export let onMaximize: ()=>{};
+  let onMinimize: ()=>{};
+  let onMaximize: ()=>{};
+  export let maxWidth = 320;
 
  
 	export let left = 600;
@@ -23,9 +24,10 @@
 <Draggable {left} {top}>
 
 <div class="window glass " >
-  <div style="max-width: 320px">
+  <div style="max-width: {maxWidth}px">
     <div class="title-bar glass">
-      <div class="title-bar-text">A glass window frame</div>
+      <div class="title-bar-text">
+        <slot name="title"></slot></div>
       <div class="title-bar-controls">
         {#if minimized === false}
         <button aria-label="Minimize" on:click={minimize}></button>
@@ -36,15 +38,13 @@
       </div>
     </div>
     <div class="window-body" class:minimized>
-      <p>The background behind is blurred. Will it stretch to fit?</p>
-      <!-- <iframe style="border: 0; width: 240px; height: 382px;" src="https://bandcamp.com/EmbeddedPlayer/album=3655657492/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://eddyeddyeddy.bandcamp.com/album/swimming">Swimming by Eddy Eddy Eddy</a></iframe> -->
-      <!-- <p>I guess a sound player is going to show up here eventually</p> -->
-      <iframe title="audio player" style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3655657492/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://eddyeddyeddy.bandcamp.com/album/swimming">Swimming by Eddy Eddy Eddy</a></iframe>
+      <slot name="body">
+
+      </slot>
     </div>
   </div>
 </div>
 </Draggable>
-
 <style>
   .minimized {
     display: none;
