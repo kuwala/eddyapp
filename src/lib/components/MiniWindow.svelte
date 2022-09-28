@@ -1,10 +1,13 @@
 <script lang="ts">
   import '7.css/dist/7.css'
   import Draggable from './Draggable.svelte';
+    import MenuBar from './MenuBar.svelte';
   export let onClose: ()=>{};
   let onMinimize: ()=>{};
   let onMaximize: ()=>{};
   export let maxWidth = 320;
+  export let zIndex = 1;
+  export let menuBar = true;
 
  
 	export let left = 600;
@@ -21,9 +24,9 @@
 </script>
 
 <!-- <div on:mousedown={onMouseMove} class="window glass draggable" style="left: {left}px; top: {top}px;"> -->
-<Draggable {left} {top}>
+<Draggable {left} {top} {zIndex}>
 
-<div class="window glass " >
+<div class="window glass " style="z-index:{zIndex}" >
   <div style="max-width: {maxWidth}px">
     <div class="title-bar glass">
       <div class="title-bar-text">
@@ -37,6 +40,10 @@
         <button aria-label="Close" on:click={onClose}></button>
       </div>
     </div>
+    {#if menuBar === true}
+      <MenuBar></MenuBar>
+    {/if}
+    
     <div class="window-body" class:minimized>
       <slot name="body">
 

@@ -37,8 +37,8 @@ function decrement() {
 	<MiniWindow
 		maxWidth={340}
 		onClose={() => (showWindow = false)}
-		left={600}
-		top={600}
+		left={38}
+		top={338}
 	>
 		<span slot="title"> Photos </span>
 		<span slot="body">

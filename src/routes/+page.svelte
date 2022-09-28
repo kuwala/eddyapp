@@ -40,18 +40,14 @@
 	</span>
 	<div class="xp-desktop">
 
-		<div class="centered-divd">
 			<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-			<div class="centered-div">
 
 			<AudioPlayerWindow bind:showWindow={showAudioPlayer} ></AudioPlayerWindow>
 			<GalleryWindow bind:showWindow={showGallery}></GalleryWindow>
 			<h1>Uh hello</h1>
-			</div>
 
 			
 
-		</div>
 
 	</div> <!-- end desktop-->
 	  <div style="margin-top: 58px;">
@@ -66,6 +62,8 @@
 		width: 100%;
 		transition: opacity 3s ease-in-out;
 		opacity: 0;
+		z-index: 3;
+		position: relative;
 	}
 	.fade-in {
 
@@ -89,6 +87,8 @@
 		background-size: cover;
 
 		transition: box-shadow 0.5s ease-in-out;
+		overflow: hidden;
+		position: relative;
 	}
 	.xp-desktop:hover {
 		box-shadow: 0 0 8px 4px rgba(0, 140, 186, 0.5);

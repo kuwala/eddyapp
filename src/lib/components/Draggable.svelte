@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let left = 600;
 	export let top = 700;
+	export let zIndex = 1;
 	
 	let moving = false;
 	
@@ -30,7 +31,7 @@
 	}
 </style>
 
-<div on:mousedown={onMouseDown} style="left: {left}px; top: {top}px;" class="draggable">
+<div on:mousedown={onMouseDown} style="left: {left}px; top: {top}px; z-index: {zIndex}" class="draggable">
 	<slot></slot>
 </div>
 
